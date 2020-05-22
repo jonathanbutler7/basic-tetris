@@ -91,7 +91,7 @@ function control(e) {
       moveDown()
     }
   }
-  document.addEventListener('keyup', control)
+  document.addEventListener('keydown', control)
 
 //move down function
 function moveDown() {
@@ -158,7 +158,7 @@ const displaySquares = document.querySelectorAll('.mini-grid div')
 
 //the tetrominos without rotations
 const upNextTetrominoes = [
-  [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
+    [1, displayWidth+1, displayWidth*2+1, 2], //lTetromino
     [0, displayWidth, displayWidth+1, displayWidth*2+1], //zTetromino
     [1, displayWidth, displayWidth+1, displayWidth+2], //tTetromino
     [0, 1, displayWidth, displayWidth+1], //oTetromino
@@ -197,7 +197,7 @@ startBtn.addEventListener('click', () => {
      const row = [i, i+1, i+2, i+3, i+4, i+5, i+6, i+7, i+8, i+9]
 
      if(row.every(index => squares[index].classList.contains('taken'))) {
-       score +=10
+       score += 10
        scoreDisplay.innerHTML = score
        row.forEach(index => {
          squares[index].classList.remove('taken')
